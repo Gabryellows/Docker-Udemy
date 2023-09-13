@@ -10,3 +10,10 @@ services:
       - dados:/var/lib/postgresql/data
       - ./scripts:/scripts
       - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+  frontend:
+    image: nginx:1.13
+    ports:
+      - 80:80
+    volumes:
+      - ./web:/usr/share/nginx/html
+    
